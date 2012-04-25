@@ -16,11 +16,7 @@ IfInString,attribs,A
 }
 Return
 
-LWin::
-
 LWin & e:: send, {escape}
-
-Escape:: LWin
 
 LWin & k:: send, {up}
 
@@ -58,7 +54,7 @@ start_processing_mnemonic()
 
 process_universal_mnemonic(mnemonic)
 {
-	if mnemonic = alt ; alt
+	if mnemonic = a ; alt
 	{
 		send {Alt down}
 		Input, mnemonic, T2 V, abcdefghijklmnopqrstuvwxyz{esc}, 
@@ -181,7 +177,7 @@ process_universal_mnemonic(mnemonic)
 	}
 }
 
-LWin & `;::
+LWin & space::
 Input, mnemonic, T2, {enter}{esc}, 
 	if ErrorLevel = Timeout
 		return
@@ -192,7 +188,7 @@ Input, mnemonic, T2, {enter}{esc},
 process_mnemonic(mnemonic)
 return
 
-LWin & space::
+LWin & `;::
 Input, mnemonic, T2, {enter}, 
 	if ErrorLevel = Timeout
 		return
@@ -247,7 +243,7 @@ if mnemonic = babe ; switch to addie's chat window
 
 process_mnemonic(mnemonic)
 {
-    start_processing_mnemonic()
+	start_processing_mnemonic()
 
 	process_universal_mnemonic(mnemonic)
 
